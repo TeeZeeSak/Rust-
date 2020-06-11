@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.IO.Ports;
-using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
-using System.Security.Policy;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 
@@ -73,7 +64,7 @@ namespace Rust__
                     }
                     else
                     {
-                        if (server.data[0].attributes.rust_type == "modded")
+                        if (server.data[0].attributes.details.rust_type == "modded")
                         {
                             label13.Text = "Modded";
                         }
@@ -178,6 +169,7 @@ namespace Rust__
                 this.Visible = false;
                 bCanChange = true;
                 bGetCommands = false;
+                bFading = false;
             }
         }
         public static string PingTimeAverage(string host, int echoNum)
